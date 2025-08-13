@@ -1,5 +1,129 @@
-Clinical Trial: Study of a New Cancer Therapy
-Summary: This trial evaluates the effectiveness of DrugX in treating patients with advanced solid tumors.
-Phase: Phase 2
-Status: Recruiting
-NCT ID: NCT12345678
+Clinical Trial: Robotic Versus Thoracolaparoscopic Esophagectomy for Esophageal Cancer
+Summary: Esophageal cancer is a debilitating condition. The treatment involved is complex requiring a combination of chemotherapy and surgery in most cases. Complete removal of the tumor and the adjacent lymph nodes is of utmost importance in improving the survival. Lymph node yield following surgery helps in proper staging of the disease and is an important prognosticating variable. It is hypothesized that the lymph node yield following robotic esophagectomy is higher than that following thoracolaparoscopic esophagectomy. The study aims to compare the short term oncological outcomes following robotic esophagectomy and thoracolaparoscopic esophagectomy for carcinoma esophagus.
+Phase: ['NA']
+Status: UNKNOWN
+NCT ID: NCT03727126
+
+Clinical Trial: Allogeneic Hematopoietic Stem Cell Transplantation
+Summary: To assess the engraftment of hematopoietic stem cells following reduced-intensity conditioning in children presenting with solid tumors or hematological malignancy by evaluating post-transplantation chimerism and hematological reconstitution.
+
+To study acute and/or chronic graft-versus-host reaction (incidence and severity) and immune reconstitution, post-transplantation To study the effectiveness of the protocol on tumor response.
+
+To study overall survival.
+Phase: ['PHASE2']
+Status: UNKNOWN
+NCT ID: NCT00750126
+
+Clinical Trial: A Study of GLB-001 in Patients With Relapsed or Refractory Acute Myeloid Leukemia or Relapsed or Refractory Higher Risk Myelodysplastic Syndromes
+Summary: Study GLB-001-01 is a first-in-human (FIH), Phase 1, open-label, dose escalation and expansion clinical study of GLB-001 in participants with relapsed or refractory acute myeloid leukemia (R/R AML) or in participants with relapsed or refractory higher-risk myelodysplastic syndromes (R/R HR-MDS). The dose escalation part (Phase 1a) of the study will evaluate the safety, tolerability, pharmacokinetics (PK), pharmacodynamics (PD) and preliminary efficacy of GLB-001 administered orally. Approximately 24 participants (up to 42 participants) may be enrolled in Phase 1a of the study.
+
+The dose expansion part (Phase 1b) will be followed to understand the relationships among dose, exposure, toxicity, tolerability and clinical activity, to identify minimally active dose, and to select the recommended dose(s) for phase 2 study. Up to 24 participants (12 participants per dose level) may be enrolled in Phase 1b of the study.
+Phase: ['PHASE1']
+Status: RECRUITING
+NCT ID: NCT06146257
+
+Clinical Trial: The IIT Study of Evaluation of P-IL-2 Single Agent and With Anti-PD-1
+Summary: Phase Ia: single-dose escalation study: accelerated titration combined with traditional "3+3" dose. Sample size is correlated with the DLT occurring in each dose group. 4 dose groups are expected; the first dose group is the accelerated titration group, which includes only 1 subject; subsequent dose groups are in traditional "3+3" dose increments, with 3-6 subjects in each group; a total of 10-19 subjects are expected in all dose groups. If the DLT is still not present in the highest dose ,the safety monitoring committee(SMC) to determine if it is necessary to continue incrementally to a higher dose.
+Phase: ['PHASE1']
+Status: RECRUITING
+NCT ID: NCT05829057
+
+Clinical Trial: Molecular Subtyping for Prognosis Evaluation in Resected Pancreatic Adenocarcinoma
+Summary: Pancreatic adenocarcinoma (PAAD) patients following surgeries are prone to relapse shortly, while it is not well understood by current biomarkers. Given the potential associations of human leukocyte antigen class I (HLA-I) genotype with oncogenic mutational profile and immunotherapy efficacy, we aimed to assess whether differential HLA-I genotype could predict the postoperative outcomes in resected PAAD patients.
+Phase: []
+Status: COMPLETED
+NCT ID: NCT05483257
+
+Clinical Trial: Prognosis of One-stage Hepatectomy for Bilobar Colorectal Metastases
+Summary: It is not rare that two-stage hepatectomy for multiple bilobar colorectal liver metastases (CLM) be left incomplete because of disease progression or technical reasons. One-stage hepatectomy seems a feasible and safe alternative, however, long-term results are lacking. This study aims to provide evidence that one-stage hepatectomy compelling tumor exposure provides adequate long-term results with low risk of local recurrences.
+Phase: []
+Status: COMPLETED
+NCT ID: NCT01683357
+
+Clinical Trial: Bortezomib, Total Marrow Irradiation, Fludarabine Phosphate, and Melphalan in Treating Patients Undergoing Donor Peripheral Blood Stem Cell Transplant For High-Risk Stage I or II Multiple Myeloma
+Summary: RATIONALE: Bortezomib may stop the growth of cancer cells by blocking some of the enzymes needed for cell growth. Giving chemotherapy drugs, such as fludarabine phosphate and melphalan, and total marrow irradiation before a donor peripheral blood stem cell transplant helps stop the growth of cancer cells and helps stop the patient's immune system from rejecting the donor's stem cells. When the healthy stem cells from a donor are infused into the patient they may help the patient's bone marrow make stem cells, red blood cells, white blood cells, and platelets.
+
+PURPOSE: This phase I trial is studying the side effects and best dose of bortezomib when given together with fludarabine phosphate and melphalan with or without total marrow irradiation in treating patients undergoing donor peripheral blood stem cell transplant for high-risk stage I or II multiple myeloma.
+Phase: ['PHASE1']
+Status: COMPLETED
+NCT ID: NCT01163357
+
+Clinical Trial: Serologic Response to SHINGRIX Vaccine in Patients With CLL and WM Treated With BTK Inhibitors
+Summary: The primary objective of the study is to assess the capability of a patient with Chronic Lymphocytic Leukemia (CLL) or Waldenström Macroglobulinemia (WM) to generate an immune response to the Shingrix vaccine under first-line BTK inhibitors.
+Phase: ['EARLY_PHASE1']
+Status: COMPLETED
+NCT ID: NCT03771157
+
+Clinical Trial: Creation of an Infrastructure to Support Delivery of mHealth Interventions for Cancer Patients
+Summary: Despite the deleterious impact of smoking upon cancer treatment outcomes, smoking prevalence remains alarmingly high among cancer patients. Thus, reducing smoking by cancer patients is a public health priority, but treatments to date have demonstrated limited efficacy. Mobile health (mHealth) interventions have the potential to improve treatment efficacy while also greatly extending reach. The goal of this infrastructure proposal is to build a resource to facilitate the creation of mHealth tools that address the tobacco treatment needs of cancer patients. This resource, which will be available to researchers throughout Florida, would fill a critical gap in mHealth capacity.
+Phase: ['NA']
+Status: RECRUITING
+NCT ID: NCT06909357
+
+Clinical Trial: IBI110 Combined With Sintilimab in Second-line Advanced or Metastatic Esophageal Squamous Cell Carcinoma(ESCC)
+Summary: This is a single-center, prospective, single-arm Phase II clinical study to evaluate the efficacy and safety of IBI110 in combination with Sintilimab in subjects with advanced or metastatic esophageal squamous cell carcinoma (ESCC) who have failed first-line treatment with PD-1 inhibitors combined with chemotherapy.
+
+Patients who meet the inclusion criteria will be treated with IBI110 combined with Sintilimab until disease progression, death, toxicity intolerance, withdrawal of informed consent, initiation of new anti-tumor therapy, or termination of therapy for other reasons specified in the protocol. RECIST v1.1 was used for clinical tumor imaging evaluation every 6 weeks during treatment.
+Phase: ['PHASE2']
+Status: NOT_YET_RECRUITING
+NCT ID: NCT06078657
+
+FDA Drug Approval: RIBASPHERE ()
+Dosage Form: CAPSULE
+Approval Date: 
+Company: CHARTWELL RX
+Application #: ANDA076203
+
+FDA Drug Approval: ESMOLOL HYDROCHLORIDE ()
+Dosage Form: INJECTABLE
+Approval Date: 
+Company: MYLAN INSTITUTIONAL
+Application #: ANDA076474
+
+FDA Drug Approval: METFORMIN HYDROCHLORIDE ()
+Dosage Form: TABLET, EXTENDED RELEASE
+Approval Date: 
+Company: NOSTRUM PHARMS LLC
+Application #: ANDA076756
+
+FDA Drug Approval: FERNISONE ()
+Dosage Form: TABLET
+Approval Date: 
+Company: FERNDALE LABS
+Application #: ANDA083364
+
+FDA Drug Approval: HYDROCORTISONE ()
+Dosage Form: TABLET
+Approval Date: 
+Company: BARR
+Application #: ANDA083999
+
+FDA Drug Approval: PREDNISOLONE ()
+Dosage Form: TABLET
+Approval Date: 
+Company: CHARTWELL RX
+Application #: ANDA084542
+
+FDA Drug Approval: HYDROCORTISONE ()
+Dosage Form: CREAM
+Approval Date: 
+Company: PERRIGO NEW YORK
+Application #: ANDA085026
+
+FDA Drug Approval: ZONISAMIDE ()
+Dosage Form: CAPSULE
+Approval Date: 
+Company: AUROBINDO PHARMA LTD
+Application #: ANDA077645
+
+FDA Drug Approval: CITALOPRAM HYDROBROMIDE ()
+Dosage Form: TABLET
+Approval Date: 
+Company: EPIC PHARMA
+Application #: ANDA077045
+
+FDA Drug Approval: ROSIGLITAZONE MALEATE AND METFORMIN HYDROCHLORIDE ()
+Dosage Form: TABLET
+Approval Date: 
+Company: TEVA
+Application #: ANDA077337

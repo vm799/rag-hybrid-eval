@@ -1,74 +1,108 @@
-# RAG Hybrid Eval
+Drug Regulation & Clinical Trials RAG Bot
+An AI-powered semantic search assistant for exploring FDA drug approvals and ClinicalTrials.gov trial data.
+Built with LangChain, SentenceTransformer embeddings, and a Chroma vector database, this system ingests live public regulatory data and enables natural language question answering.
 
-A small Retrieval-Augmented Generation (RAG) pipeline for ingesting documents, generating embeddings, and storing them in a vector database for retrieval.
+Features
+Live data ingestion from:
 
-This project demonstrates building a foundational RAG workflow using modern AI tools.
+FDA Drug Approvals API
 
+ClinicalTrials.gov API
 
-## Technologies & Tools
+Semantic search over drug and trial descriptions (meaning > keywords).
 
-- Python 3.11+
-- [LangChain](https://www.langchain.com/) for document loading & splitting
-- [LangChain Community Loaders](https://github.com/hwchase17/langchain-community) for easy file ingestion
-- [Chroma](https://www.trychroma.com/) vector database
-- [SentenceTransformers](https://www.sbert.net/) for embeddings
-- VS Code for development
+Persistent vector database using Chroma.
 
-## Usage
+Embeddings with all-MiniLM-L6-v2 from sentence-transformers.
 
-1. Clone the repo:
-```bash
+Modular pipeline — easily extend to more APIs or local datasets.
+
+Architecture
+Data Fetch
+Pulls latest FDA drug approval data and clinical trial summaries via REST APIs.
+
+Embedding
+Converts each document into a numerical vector capturing semantic meaning.
+
+Vector Store
+Stores embeddings in a Chroma persistent database for fast retrieval.
+
+Query
+Accepts a user question, performs semantic similarity search, and returns relevant results.
+
+Setup
+1. Clone the repo
+bash
+Copy code
 git clone https://github.com/vm799/rag-hybrid-eval.git
 cd rag-hybrid-eval
-
-python3 -m venv venv
-source venv/bin/activate  # Mac/Linux
-# venv\Scripts\activate   # Windows
-
-
+2. Install dependencies
+bash
+Copy code
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
+3. Environment variables
+Create a .env file (optional — defaults are provided):
 
+env
+Copy code
+FDA_LIMIT=20
+CTG_CONDITION=oncology
+CTG_MAX=50
+Usage
+1. Ingest latest data
+Fetches FDA & ClinicalTrials.gov data, embeds, and stores in vector DB:
 
-**Why:** Shows you can **document and guide others**, which is an essential skill for startups and AI teams.
+bash
+Copy code
+python ingest_regulatory_data.py
+2. Ask questions
+Example:
 
----
+bash
+Copy code
+python query_regulatory_data.py "Which oncology trials are recruiting?"
+Sample Output:
 
-### **Step 5 — Optional: Visual diagram of RAG flow**
+csharp
+Copy code
+[INFO] Searching for: Which oncology trials are recruiting?
 
-```markdown
-## RAG Pipeline Overview
+=== Top Matches ===
 
-[data files] → [Text Loader] → [Chunk Splitter] → [Embeddings Generator] → [Chroma Vector DB] → [Ready for Retrieval]
+[1] Study NCT123456: Investigating New Immunotherapy for Lung Cancer...
+Source metadata: {'source': 'ClinicalTrials.gov', 'NCTId': 'NCT123456'}
 
+[2] FDA Approval: Drug ABC approved for metastatic breast cancer...
+Source metadata: {'source': 'FDA', 'application_number': '123456'}
+Why it matters
+Regulatory & clinical trial data is massive and constantly changing.
+This AI bot allows:
 
+Pharma & biotech teams to quickly find relevant approvals & trials.
 
-# REAL LIFE USE CASE 
+Researchers to track active studies in their focus area.
 
-# AI Regulatory Assistant: Drug Approvals & Clinical Trials
+Regulatory analysts to speed up compliance checks.
 
-# An AI-powered question-answering system for navigating drug regulations and clinical trial data.
+Extending
+Add other APIs (EMA, WHO trial registry).
 
-## Features
-- Pulls live data from FDA, EMA, WHO, and ClinicalTrials.gov
-- Stores semantic embeddings in a vector database
-- Allows natural language queries about approval processes, trial phases, safety alerts, and new approvals
-- Supports RAG for domain-specific answers
+Integrate with LLMs for full QA answers instead of raw chunks.
 
-## Example Queries
-- "Summarize all 2025 FDA drug approvals for oncology"
-- "What is the difference between FDA and EMA approval timelines?"
-- "List all active Phase 3 trials for Alzheimer's treatments"
+Deploy as a Streamlit or FastAPI web app for user-friendly access.
 
-## Stack
-- **LangChain** – RAG orchestration
-- **Chroma** – Vector database
-- **SentenceTransformers** – Embeddings
-- **Requests** – API calls
-- **OpenAI / LLaMA 2** – LLM
+Tech Stack
+LangChain for pipeline orchestration.
 
-## Getting Started
-1. Clone repo & install dependencies:
-```bash
-git clone <your-repo-url>
-cd ai-regulatory-assistant
-pip install -r requirements.txt
+SentenceTransformer (all-MiniLM-L6-v2) for embeddings.
+
+Chroma for vector storage.
+
+Requests for API calls.
+
+Python 3.12.
+
+License
+MIT License — free to use, modify, and distribute.
