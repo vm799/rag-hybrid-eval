@@ -40,3 +40,35 @@ pip install -r requirements.txt
 
 [data files] → [Text Loader] → [Chunk Splitter] → [Embeddings Generator] → [Chroma Vector DB] → [Ready for Retrieval]
 
+
+
+# REAL LIFE USE CASE 
+
+# AI Regulatory Assistant: Drug Approvals & Clinical Trials
+
+# An AI-powered question-answering system for navigating drug regulations and clinical trial data.
+
+## Features
+- Pulls live data from FDA, EMA, WHO, and ClinicalTrials.gov
+- Stores semantic embeddings in a vector database
+- Allows natural language queries about approval processes, trial phases, safety alerts, and new approvals
+- Supports RAG for domain-specific answers
+
+## Example Queries
+- "Summarize all 2025 FDA drug approvals for oncology"
+- "What is the difference between FDA and EMA approval timelines?"
+- "List all active Phase 3 trials for Alzheimer's treatments"
+
+## Stack
+- **LangChain** – RAG orchestration
+- **Chroma** – Vector database
+- **SentenceTransformers** – Embeddings
+- **Requests** – API calls
+- **OpenAI / LLaMA 2** – LLM
+
+## Getting Started
+1. Clone repo & install dependencies:
+```bash
+git clone <your-repo-url>
+cd ai-regulatory-assistant
+pip install -r requirements.txt
