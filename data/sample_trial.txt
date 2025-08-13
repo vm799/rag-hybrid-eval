@@ -1,0 +1,5 @@
+Clinical Trial: Study of a New Cancer Therapy
+Summary: This trial evaluates the effectiveness of DrugX in treating patients with advanced solid tumors.
+Phase: Phase 2
+Status: Recruiting
+NCT ID: NCT12345678

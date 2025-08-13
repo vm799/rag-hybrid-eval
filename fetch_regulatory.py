@@ -1,62 +1,67 @@
-# fetch_regulatory.py
-import os
 import requests
-from typing import List, Dict
 
-CTG_BASE = "https://clinicaltrials.gov/api/query/study_fields"
-OPENFDA_LABEL_URL = "https://api.fda.gov/drug/label.json"
+def fetch_clinical_trials(condition="oncology", max_rnk=50):
+    """
+    Fetch recent clinical trials from ClinicalTrials.gov API v2 based on a condition.
 
-def fetch_clinical_trials(condition: str = "oncology", max_rnk: int = 50) -> List[Dict]:
+    Args:
+        condition (str): Medical condition to search for (default: "oncology").
+        max_rnk (int): Number of records to fetch.
+
+    Returns:
+        list[dict]: List of trial metadata.
     """
-    Fetch a page of studies from ClinicalTrials.gov - uses study_fields API.
-    Returns a list of dicts with keys: nct_id, title, summary, phase, status.
-    """
+    base_url = "https://clinicaltrials.gov/api/v2/studies"
     params = {
-        "expr": condition,
-        "fields": "NCTId,BriefTitle,BriefSummary,Phase,OverallStatus",
-        "min_rnk": 1,
-        "max_rnk": max_rnk,
-        "fmt": "json",
+        "format": "json",
+        "query.cond": condition,
+        "pageSize": max_rnk
     }
-    r = requests.get(CTG_BASE, params=params, timeout=30)
+
+    r = requests.get(base_url, params=params)
     r.raise_for_status()
-    body = r.json()
-    items = body.get("StudyFieldsResponse", {}).get("StudyFields", [])
-    out = []
-    for t in items:
-        title = t.get("BriefTitle", [""])[0] if t.get("BriefTitle") else ""
-        summary = t.get("BriefSummary", [""])[0] if t.get("BriefSummary") else ""
-        nct = t.get("NCTId", [""])[0] if t.get("NCTId") else ""
-        phase = t.get("Phase", [""])[0] if t.get("Phase") else ""
-        status = t.get("OverallStatus", [""])[0] if t.get("OverallStatus") else ""
-        if summary or title:
-            out.append({"nct_id": nct, "title": title, "summary": summary, "phase": phase, "status": status})
-    return out
+    data = r.json()
 
-def fetch_openfda_labels(drug_name: str = None, limit: int = 10) -> List[Dict]:
+    trials = []
+    for study in data.get("studies", []):
+        protocol = study.get("protocolSection", {})
+        trials.append({
+            "nct_id": protocol.get("identificationModule", {}).get("nctId", ""),
+            "title": protocol.get("identificationModule", {}).get("briefTitle", ""),
+            "summary": protocol.get("descriptionModule", {}).get("briefSummary", ""),
+            "phase": protocol.get("designModule", {}).get("phases", []),
+            "status": protocol.get("statusModule", {}).get("overallStatus", "")
+        })
+    return trials
+
+
+def fetch_fda_drug_approvals(limit=50):
     """
-    Fetch structured product labeling (SPL) via openFDA drug/label endpoint.
-    Optionally filter by brand_name or generic_name. Returns list of dicts with basics.
+    Fetch recent drug approval data from the FDA openFDA API.
+
+    Args:
+        limit (int): Number of records to fetch.
+
+    Returns:
+        list[dict]: List of drug approval data.
     """
+    base_url = "https://api.fda.gov/drug/drugsfda.json"
     params = {"limit": limit}
-    if drug_name:
-        # search brand or generic name fields
-        params["search"] = f'openfda.brand_name:"{drug_name}"'
-    r = requests.get(OPENFDA_LABEL_URL, params=params, timeout=30)
-    if r.status_code != 200:
-        return []
-    body = r.json()
-    results = body.get("results", [])
-    out = []
-    for rec in results:
-        title = " | ".join(rec.get("openfda", {}).get("brand_name", []) or rec.get("openfda", {}).get("generic_name", []))
-        indications = " ".join(rec.get("indications_and_usage", [""]))
-        warnings = " ".join(rec.get("warnings", [""]))
-        out.append({"title": title, "indications": indications, "warnings": warnings, "raw": rec})
-    return out
 
-if __name__ == "__main__":
-    print("Fetching 5 clinical trials (example)...")
-    print(fetch_clinical_trials("diabetes", max_rnk=5))
-    print("Fetching openFDA labels for metformin...")
-    print(fetch_openfda_labels("metformin", limit=2))
+    r = requests.get(base_url, params=params)
+    r.raise_for_status()
+    data = r.json()
+
+    approvals = []
+    for record in data.get("results", []):
+        product = record.get("products", [{}])[0]
+        applications = record.get("application_number", "")
+        approvals.append({
+            "application_number": applications,
+            "brand_name": product.get("brand_name", ""),
+            "generic_name": product.get("generic_name", ""),
+            "dosage_form": product.get("dosage_form", ""),
+            "approval_date": product.get("approval_date", ""),
+            "company": record.get("sponsor_name", "")
+        })
+    return approvals
