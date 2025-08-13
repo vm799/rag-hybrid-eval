@@ -6,3 +6,9 @@ sentence-transformers>=2.2.2
 langchain-huggingface>=0.0.6
 openai>=1.0.0
 # Add more as needed for eval, web, or CLI
+requests
+langchain
+chromadb
+sentence-transformers
+python-dotenv
+openai
