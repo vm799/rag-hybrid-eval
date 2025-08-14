@@ -1,7 +1,26 @@
-
 # Project Change Log
 
 This markdown log records all significant changes made during the development of the RAG Hybrid Eval project.
+
+---
+
+## 2025-08-14
+
+- **Dependency Management & Environment:**
+  - Installed and verified all required packages in the venv, including `chromadb` and `sentence-transformers`.
+  - Resolved NumPy 2.x compatibility issues by downgrading to NumPy 1.x for PyTorch and transformers compatibility.
+  - Confirmed all core dependencies are present in the venv and provided instructions for checking/interpreting the environment.
+
+- **Code Execution & Testing:**
+  - Successfully ran `ingest.py` to load, split, and store documents in the vector database.
+  - Identified and documented deprecation warnings for `Chroma` and `persist()` in LangChain, with recommendations to update to the new API in the future.
+  - Ran `qa_app.py` and identified missing OpenAI API key as a blocking issue for LLM-based QA.
+  - Provided instructions for setting the `OPENAI_API_KEY` via environment variable or `.env` file, and recommended using the `load_env()` utility for automatic loading.
+
+- **Project Structure & Utilities:**
+  - Scaffolded and implemented utility functions in `utils.py` for logging, file I/O, and environment variable loading.
+  - Scaffolded `app.py`, `retriever.py`, and `eval_ragas.py` with docstrings and function stubs for future expansion.
+  - Updated `requirements.txt` to include all core dependencies.
 
 ---
 
